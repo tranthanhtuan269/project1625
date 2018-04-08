@@ -20,6 +20,8 @@ window.Bus = new Vue();
 Vue.component('groups', require('./components/Groups.vue'));
 Vue.component('create-group', require('./components/CreateGroup.vue'));
 Vue.component('group-chat', require('./components/GroupChat.vue'));
+Vue.component('relative-user', require('./components/RelativeUser.vue'));
+Vue.component('accept-friend', require('./components/AcceptFriend.vue'));
 
 const app = new Vue({
     el: '#app'

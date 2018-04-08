@@ -18,5 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/add-friend', 'HomeController@addFriend')->name('addFriend');
+Route::post('/send-request', 'HomeController@sendRequest')->name('sendRequest');
+
+Route::get('/accept-friend', 'HomeController@acceptFriend')->name('acceptFriend');
+Route::post('/accept-request', 'HomeController@acceptRequest')->name('acceptRequest');
+
 Route::resource('groups', 'GroupController');
 Route::resource('conversations', 'ConversationController');

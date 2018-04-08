@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Group;
+use App\SendRequest;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'request_list', 'friend_list',
     ];
 
     /**
@@ -32,4 +33,16 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Group::class)->withTimestamps();
     }
+    
+    public function request()
+    {
+        return $this->belongsToMany('App\User', 'send_requests', 'user_id', 'friend_id');
+    }
+    
+    public function friend()
+    {
+        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
+    }
+
+
 }

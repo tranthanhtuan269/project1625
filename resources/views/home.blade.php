@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-    	{{ auth()->user()->name }}
+    	<div class="col-sm-12">{{ auth()->user()->name }}</div>
         <div class="col-sm-6">
             <create-group :initial-users="{{ $users }}"></create-group>
         </div>
