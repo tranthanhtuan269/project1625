@@ -2146,6 +2146,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['initialUsers'],
@@ -37796,7 +37797,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "value": user.id
       }
-    }, [_c('div', [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c('div', [_vm._v(_vm._s(user.email))]), _vm._v(" "), _c('div', {
+    }, [(user.avatar != '') ? _c('div', [_c('img', {
+      attrs: {
+        "src": user.avatar
+      }
+    })]) : _vm._e(), _vm._v(" "), _c('div', [_vm._v(_vm._s(user.name))]), _vm._v(" "), _c('div', [_vm._v(_vm._s(user.email))]), _vm._v(" "), _c('div', {
       staticClass: "btn btn-primary",
       on: {
         "click": function($event) {

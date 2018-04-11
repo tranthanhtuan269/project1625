@@ -4,6 +4,7 @@
         <div class="panel-body">
             <div class="row" v-model="users" id="friends">
                 <div class="col-sm-2" v-for="user in users" :value="user.id">
+                    <div v-if="user.avatar != ''"><img :src="user.avatar"></div>
                     <div>{{ user.name }}</div>
                     <div>{{ user.email }}</div>
                     <div class="btn btn-primary" @click.prevent="sendRequest(user)">Send Request</div>
@@ -24,7 +25,7 @@
         },
         watch: {
             sendRequest: function () {
-              this.initialUsers= this.initialUsers
+              this.initialUsers = this.initialUsers
             }
         },
         methods: {

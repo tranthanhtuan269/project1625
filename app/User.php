@@ -17,7 +17,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'request_list', 'friend_list',
+        'name', 
+        'email', 
+        'avatar',
+        'address',
+        'town_id',
+        'district_id',
+        'city_id',
+        'birth_day',
+        'birth_month',
+        'birth_year',
+        'password', 
+        'request_list', 
+        'friend_list', 
     ];
 
     /**
@@ -44,5 +56,18 @@ class User extends Authenticatable
         return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
     }
 
+    public function city()
+    {
+        return $this->belongsTo('App\City');
+    }
 
+    public function district()
+    {
+        return $this->belongsTo('App\District');
+    }
+
+    public function town()
+    {
+        return $this->belongsTo('App\Town');
+    }
 }
